@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sistema2_pais,sistema2.pais,model_sistema2_pais,base.group_user,1,1,1,1
+access_sistema2_provincia,sistema2.provincia,model_sistema2_provincia,base.group_user,1,1,1,1
+access_sistema2_canton,sistema2.canton,model_sistema2_canton,base.group_user,1,1,1,1
+access_sistema2_parroquia,sistema2.parroquia,model_sistema2_parroquia,base.group_user,1,1,1,1

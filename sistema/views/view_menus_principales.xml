@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<odoo>
+    <menuitem name="AGENDA" id="sistema.agenda_menu" />
+    <menuitem name="CONTACTOS" id="sistema.contactos_menu" parent="sistema.agenda_menu" />
+</odoo>

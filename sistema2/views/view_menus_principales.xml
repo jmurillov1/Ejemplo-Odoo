@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<odoo>
+    <menuitem name="DIVISION POLITICA" id="sistema2.division_menu" />
+    <menuitem name="DISTRIBUCIÓN" id="sistema2.distribucion_menu" parent="sistema2.division_menu" />
+</odoo>

@@ -1,0 +1,113 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="sistema_persona_tree">
+      <field name="name">sistema.personatree</field>
+      <field name="model">sistema.persona</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="codigo" />
+          <field name="nombre" />
+          <field name="apellido" />
+          <field name="direccion" />
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="sistema_persona_form">
+      <field name="name">sistema.personaform</field>
+      <field name="model">sistema.persona</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group col="2">
+              <group colspan="2">
+                <field name="codigo" />
+              </group>
+              <group>
+                <field name="nombre" />
+              </group>
+              <group>
+                <field name="apellido" />
+              </group>
+            </group>
+            <group colspan="2">
+              <field name="direccion" />
+            </group>
+            <group colspan="2">
+              <field name="contactos_ids">
+                <tree editable="bottom">
+                  <field name="codigo" />
+                  <field name="numero" />
+                  <field name="value" />
+                  <field name="value2" />
+                </tree>
+              </field>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="sistema.action_window_persona">
+      <field name="name">CONTACTOS</field>
+      <field name="res_model">sistema.persona</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.ui.view" id="sistema_contacto_tree">
+      <field name="name">sistema.contactotree</field>
+      <field name="model">sistema.contacto</field>
+      <field name="arch" type="xml">
+        <tree create="false" delete="false">
+          <field name="codigo" />
+          <field name="numero" />
+          <field name="value" />
+          <field name="value2" />
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="sistema.action_window_lista">
+      <field name="name">LISTA</field>
+      <field name="res_model">sistema.contacto</field>
+      <field name="view_mode">tree</field>
+    </record>
+
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="sistema.action_server">
+      <field name="name">sistema server</field>
+      <field name="model_id" ref="model_sistema_sistema"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+
+    <!-- menu categories -->
+
+    <!-- <menuitem name="Contacto" id="sistema.contacto_menu" parent="sistema.administracion_men"/>
+    <menuitem name="Menu 2" id="sistema.menu_2" parent="sistema.administracion_ment"/> -->
+
+    <!-- actions -->
+
+    <menuitem name="Listado de Contactos" id="sistema.persona_menu_list" parent="sistema.contactos_menu" action="sistema.action_window_persona" />
+    <menuitem name="Lista" id="sistema.contacto_menu_list_lista" parent="sistema.persona_menu_list" action="sistema.action_window_lista" />
+    <!-- <menuitem name="Server to list" id="sistema" parent="sistema.administracion_menu"
+              action="sistema.action_server"/> -->
+
+  </data>
+</odoo>

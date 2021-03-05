@@ -1,0 +1,186 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="sistema2_pais_tree">
+      <field name="name">sistema2.pais</field>
+      <field name="model">sistema2.pais</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="codigo" />
+          <field name="nombre" />
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="sistema2_pais_form">
+      <field name="name">sistema2.pais</field>
+      <field name="model">sistema2.pais</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <group colspan="2">
+                <field name="codigo" />
+                <field name="nombre" />
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="sistema2.action_window_pais">
+      <field name="name">PAIS</field>
+      <field name="res_model">sistema2.pais</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    <!-- actions -->
+
+    <menuitem name="PAIS" id="sistema2.menu_pais" parent="sistema2.distribucion_menu" action="sistema2.action_window_pais" />
+
+    <record model="ir.ui.view" id="sistema2_provincia_tree">
+      <field name="name">sistema2.provincia</field>
+      <field name="model">sistema2.provincia</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="codigo" />
+          <field name="nombre" />
+          <field name="pais_id" />
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="sistema2_provincia_form">
+      <field name="name">sistema2.provincia</field>
+      <field name="model">sistema2.provincia</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <group>
+                <field name="codigo" />
+                <field name="pais_id" />
+                <field name="nombre" />
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="sistema2.action_window_provincia">
+      <field name="name">PROVINCIA</field>
+      <field name="res_model">sistema2.provincia</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="PROVINCIA" id="sistema2.menu_provincia" parent="sistema2.distribucion_menu" action="sistema2.action_window_provincia" />
+
+    <record model="ir.actions.act_window" id="sistema2.action_window_pais">
+      <field name="name">PAIS</field>
+      <field name="res_model">sistema2.pais</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="PAIS" id="sistema2.menu_pais" parent="sistema2.distribucion_menu" action="sistema2.action_window_pais" />
+
+    <record model="ir.ui.view" id="sistema2_canton_tree">
+      <field name="name">sistema2.canton</field>
+      <field name="model">sistema2.canton</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="codigo" />
+          <field name="nombre" />
+          <field name="pais_id" />
+          <field name="provincia_id" />
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="sistema2_canton_form">
+      <field name="name">sistema2.canton</field>
+      <field name="model">sistema2.canton</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <group>
+                <field name="codigo" />
+                <field name="pais_id" />
+                <field name="provincia_id" />
+                <field name="nombre" />
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="sistema2.action_window_canton">
+      <field name="name">CANTÓN</field>
+      <field name="res_model">sistema2.canton</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="CANTÓN" id="sistema2.menu_canton" parent="sistema2.distribucion_menu" action="sistema2.action_window_canton" />
+
+
+    <record model="ir.actions.act_window" id="sistema2.action_window_pais">
+      <field name="name">PAIS</field>
+      <field name="res_model">sistema2.pais</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="PAIS" id="sistema2.menu_pais" parent="sistema2.distribucion_menu" action="sistema2.action_window_pais" />
+
+    <record model="ir.ui.view" id="sistema2_parroquia_tree">
+      <field name="name">sistema2.parroquia</field>
+      <field name="model">sistema2.parroquia</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="codigo" />
+          <field name="nombre" />
+          <field name="pais_id" />
+          <field name="provincia_id" />
+          <field name="canton_id" />
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="sistema2_parroquia_form">
+      <field name="name">sistema2.parroquia</field>
+      <field name="model">sistema2.parroquia</field>
+      <field name="arch" type="xml">
+        <form>
+          <sheet>
+            <group>
+              <group>
+                <field name="codigo" />
+                <field name="pais_id" />
+                <field name="provincia_id" />
+                <field name="canton_id" />
+                <field name="nombre" />
+              </group>
+            </group>
+          </sheet>
+        </form>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="sistema2.action_window_parroquia">
+      <field name="name">PARROQUIA</field>
+      <field name="res_model">sistema2.parroquia</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    
+    <menuitem name="PARROQUIA" id="sistema2.menu_parroquia" parent="sistema2.distribucion_menu" action="sistema2.action_window_parroquia" />
+
+  </data>
+</odoo>
