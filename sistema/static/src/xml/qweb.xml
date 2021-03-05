@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<templates id="template" xml:space="preserve">
+    <t t-extend="ListView.buttons">
+        <t t-jquery="div.o_list_buttons" t-operation="prepend">
+            <t t-if="widget.modelName=='ges.rrhh.partida'">
+                <button class="btn btn-primary my_btn_act" type="object">Actualizar Partidas</button>
+            </t>
+        </t>
+    </t>
+    <t t-extend="ListView.buttons">
+        <t t-jquery="div.o_list_buttons" t-operation="prepend">
+            <t t-if="widget.modelName=='ges.rrhh.partida'">
+                <button class="btn btn-primary my_btn_cre" type="object">Generar Nuevas</button>
+            </t>
+        </t>
+    </t>
+    <t t-extend="ListView.buttons">
+        <t t-jquery="div.o_list_buttons" t-operation="prepend">
+            <t t-if="widget.modelName=='ges.rrhh.planificacion'">
+                <button class="btn btn-primary my_btn_gen" type="object">Generar Planificacion Inicial</button>
+            </t>
+        </t>
+    </t>
+</templates>

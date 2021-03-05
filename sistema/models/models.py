@@ -20,11 +20,13 @@ class Persona(models.Model):
 
     codigo = fields.Char(size=4, string='Codigo', readonly=True,
                          default=lambda self: compute_default_codigo(self, 4))
-    nombre = fields.Char(string='Nombre', required=True)
+    nombre = fields.Char(string='Nombre', required=True, default=lambda self: "Jordan")
     apellido = fields.Char(string='Apellido', required=True)
     direccion = fields.Text(string='Dirección', required=True)
     contactos_ids = fields.One2many(
         'sistema.contacto', 'persona_id', string="Lista de Contactos", required=True)
+    pais_id = fields.Many2one('sistema2.pais', string="Pais", required=True)
+    provincia_id = fields.Many2one('sistema2.provincia', string="Provincia", required=True)
 
 class Contacto(models.Model):
     _name = 'sistema.contacto'

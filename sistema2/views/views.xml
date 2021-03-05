@@ -109,8 +109,8 @@
             <group>
               <group>
                 <field name="codigo" />
-                <field name="pais_id" />
-                <field name="provincia_id" />
+                <field name="pais_id" options="{'no_create_edit':True, 'no_create':True,'no_open':True}" />
+                <field name="provincia_id" domain="[('pais_id','=',pais_id)]" attrs="{'invisible':[('pais_id','=',False)], 'required':[('pais_id','!=',False)]}" options="{'no_create_edit':True, 'no_create':True,'no_open':True}" />
                 <field name="nombre" />
               </group>
             </group>
@@ -160,7 +160,7 @@
           <sheet>
             <group>
               <group>
-                <field name="codigo" />
+                <field name="codigo"/>
                 <field name="pais_id" />
                 <field name="provincia_id" />
                 <field name="canton_id" />
@@ -179,7 +179,7 @@
       <field name="res_model">sistema2.parroquia</field>
       <field name="view_mode">tree,form</field>
     </record>
-    
+
     <menuitem name="PARROQUIA" id="sistema2.menu_parroquia" parent="sistema2.distribucion_menu" action="sistema2.action_window_parroquia" />
 
   </data>

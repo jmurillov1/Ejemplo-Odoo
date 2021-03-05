@@ -13,7 +13,7 @@
                 "-c",
                 "/home/jmurillov1/bin/odoo13/odoo/odoop.conf",
                 "-u",
-                "sistema2"
+                "sistema,sistema2"
             ],
         }
     ]
